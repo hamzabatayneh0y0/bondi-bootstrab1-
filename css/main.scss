@@ -1,0 +1,234 @@
+@use "../helper/helper.scss" as *;
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+body {
+  font-family: "Roboto", system-ui;
+}
+
+%main-btn {
+  padding: 0.5rem 1rem;
+  color: var(--yellow-color);
+  background-color: var(--red-color);
+  border: none;
+}
+
+.main-btn {
+  @extend %main-btn;
+}
+
+.main-btn:hover {
+  background-color: var(--red-color);
+  color: white;
+}
+
+.main-tittle:after {
+  content: "";
+  position: absolute;
+  @extend %centeringX;
+  width: 130px;
+  height: 1px;
+  background-color: var(--green-color);
+}
+
+.navbar {
+  background-color: var(--dark-color);
+  .navbar-nav {
+    .nav-link {
+      color: white;
+      &:hover,
+      &.active {
+        color: var(--green-color);
+      }
+    }
+  }
+  .search {
+    color: var(--green-color);
+    border-left: 1px solid var(--green-color);
+  }
+  .navbar-toggler {
+    font-size: 25px;
+    border: 1px solid white;
+    background-color: rgb(255 255 255);
+    &:focus {
+      -webkit-box-shadow: none;
+              box-shadow: none;
+    }
+  }
+}
+.landing {
+  background-color: var(--dark-color);
+  color: white;
+  height: calc(100vw + 72px);
+}
+ul {
+  list-style: none;
+}
+.features {
+  .icon-holder {
+    height: 200px;
+    .number {
+      font-size: 12rem;
+      color: var(--section-color);
+    }
+    svg {
+      @extend %centeringX;
+    }
+    .icon {
+      color: var(--green-color);
+    }
+  }
+  .info-f h4 {
+    color: var(--yellow-color);
+  }
+}
+
+.our-works {
+  background-color: var(--section-color);
+  .list {
+    li {
+      cursor: pointer;
+      &:hover {
+        @extend %main-btn;
+        border-radius: 50rem;
+      }
+    }
+  }
+  .img-holder {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    .box{
+      padding: 5px;
+      background-color: white;
+      position: relative;
+      overflow: hidden;
+      &::before{
+        content: attr(data-work);
+        color: white;
+        position: absolute;
+        font-size: 3rem;
+        font-weight: bold;
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        background-color: #33d1cc86;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s;
+        -webkit-transform: translateX(calc(-100% - 5px));
+            -ms-transform: translateX(calc(-100% - 5px));
+                transform: translateX(calc(-100% - 5px));
+       
+      }
+      &:hover::before{
+        -webkit-transform: translateX(0);
+            -ms-transform: translateX(0);
+                transform: translateX(0);
+      }
+    }
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.stuff{
+  .container{
+>p{
+  max-width: 500px;
+}
+  }
+}
+
+.team{
+  background-color: var(--section-color);
+  .tittle{
+   h2{
+    color: var(--yellow-color);
+   }
+  }
+  .img-team{
+    .card{
+      background-color: var(--section-color);
+      border: none;
+      h3{
+        background-color: var(--green-color);
+        color: white;
+      }
+      q{
+        background-color: white;
+      }
+    }
+  }
+}
+
+.project{
+  background-color: var(--dark-color);
+}
+
+.subscribe{
+  background-color: var(--yellow-color);
+  input[type=email]{
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    &::-webkit-input-placeholder{
+      color: white;
+      font-size: 1rem;
+    }
+    &::-moz-placeholder{
+      color: white;
+      font-size: 1rem;
+    }
+    &:-ms-input-placeholder{
+      color: white;
+      font-size: 1rem;
+    }
+    &::-ms-input-placeholder{
+      color: white;
+      font-size: 1rem;
+    }
+    &::placeholder{
+      color: white;
+      font-size: 1rem;
+    }
+  }
+input[type=submit]{
+  border: none;
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+}
+}
+
+.contact{
+  background-color: var(--dark-color);
+  .copy-right1 >span{color: var(--green-color);}
+  .copy-right2 >span{color: var(--yellow-color);}
+  .social li{
+    &:nth-child(1) svg {
+      background-color: rgb(8, 139, 247);
+    }
+    &:nth-child(2) svg{
+      background-color: rgb(59, 158, 240);
+    }
+    &:nth-child(3) svg{
+      background-color: rgb(14, 109, 187);
+    }
+    &:nth-child(4) svg{
+      background-color: rgb(255, 0, 0);
+    }
+  }
+}

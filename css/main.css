@@ -1,0 +1,194 @@
+.main-tittle:after, .features .icon-holder svg {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+:root {
+  --dark-color: #19283f;
+  --green-color: #33d1cc;
+  --red-color: #ff3150;
+  --yellow-color: #ffc400;
+  --section-color: #eff7fa;
+}
+
+body {
+  font-family: "Roboto", system-ui;
+}
+
+.our-works .list li:hover, .main-btn {
+  padding: 0.5rem 1rem;
+  color: var(--yellow-color);
+  background-color: var(--red-color);
+  border: none;
+}
+
+.main-btn:hover {
+  background-color: var(--red-color);
+  color: white;
+}
+
+.main-tittle:after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 1px;
+  background-color: var(--green-color);
+}
+
+.navbar {
+  background-color: var(--dark-color);
+}
+.navbar .navbar-nav .nav-link {
+  color: white;
+}
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link.active {
+  color: var(--green-color);
+}
+.navbar .search {
+  color: var(--green-color);
+  border-left: 1px solid var(--green-color);
+}
+.navbar .navbar-toggler {
+  font-size: 25px;
+  border: 1px solid white;
+  background-color: rgb(255, 255, 255);
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.landing {
+  background-color: var(--dark-color);
+  color: white;
+  height: calc(100vw + 72px);
+}
+
+ul {
+  list-style: none;
+}
+
+.features .icon-holder {
+  height: 200px;
+}
+.features .icon-holder .number {
+  font-size: 12rem;
+  color: var(--section-color);
+}
+.features .icon-holder .icon {
+  color: var(--green-color);
+}
+.features .info-f h4 {
+  color: var(--yellow-color);
+}
+
+.our-works {
+  background-color: var(--section-color);
+}
+.our-works .list li {
+  cursor: pointer;
+}
+.our-works .list li:hover {
+  border-radius: 50rem;
+}
+.our-works .img-holder {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.our-works .img-holder .box {
+  padding: 5px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+.our-works .img-holder .box::before {
+  content: attr(data-work);
+  color: white;
+  position: absolute;
+  font-size: 3rem;
+  font-weight: bold;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background-color: rgba(51, 209, 204, 0.5254901961);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  transform: translateX(calc(-100% - 5px));
+}
+.our-works .img-holder .box:hover::before {
+  transform: translateX(0);
+}
+.our-works .img-holder img {
+  width: 100%;
+}
+
+.stuff .container > p {
+  max-width: 500px;
+}
+
+.team {
+  background-color: var(--section-color);
+}
+.team .tittle h2 {
+  color: var(--yellow-color);
+}
+.team .img-team .card {
+  background-color: var(--section-color);
+  border: none;
+}
+.team .img-team .card h3 {
+  background-color: var(--green-color);
+  color: white;
+}
+.team .img-team .card q {
+  background-color: white;
+}
+
+.project {
+  background-color: var(--dark-color);
+}
+
+.subscribe {
+  background-color: var(--yellow-color);
+}
+.subscribe input[type=email] {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+}
+.subscribe input[type=email]::-moz-placeholder {
+  color: white;
+  font-size: 1rem;
+}
+.subscribe input[type=email]::placeholder {
+  color: white;
+  font-size: 1rem;
+}
+.subscribe input[type=submit] {
+  border: none;
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+}
+
+.contact {
+  background-color: var(--dark-color);
+}
+.contact .copy-right1 > span {
+  color: var(--green-color);
+}
+.contact .copy-right2 > span {
+  color: var(--yellow-color);
+}
+.contact .social li:nth-child(1) svg {
+  background-color: rgb(8, 139, 247);
+}
+.contact .social li:nth-child(2) svg {
+  background-color: rgb(59, 158, 240);
+}
+.contact .social li:nth-child(3) svg {
+  background-color: rgb(14, 109, 187);
+}
+.contact .social li:nth-child(4) svg {
+  background-color: rgb(255, 0, 0);
+}/*# sourceMappingURL=main.css.map */
